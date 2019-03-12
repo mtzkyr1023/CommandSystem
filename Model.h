@@ -78,6 +78,7 @@ private:
 
 public:
 	StaticModel() {
+		m_stirde = 0;
 		m_stride = sizeof(Vertex);
 	}
 
