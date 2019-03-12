@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Resource">
+      <UniqueIdentifier>{5386eb76-8a6c-44e8-8fda-2bcc33c7b017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\DirectX">
+      <UniqueIdentifier>{73987d29-e684-45af-9eb5-b2765f511fcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\DirectX">
+      <UniqueIdentifier>{00ec1c42-8a65-4e60-bb8b-291c18344a1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Resource">
+      <UniqueIdentifier>{30bcceb0-8251-4d23-ae74-0315122d0e88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Resource\Texture">
+      <UniqueIdentifier>{bb8066dc-d14d-49d9-9d55-93d2ebd0ffc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Resource\Texture">
+      <UniqueIdentifier>{c135e09a-1564-423a-812d-d3d10a3c91cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Command">
+      <UniqueIdentifier>{696b230d-4d1f-4fbd-8a23-677662369aac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Command\GraphicCommand">
+      <UniqueIdentifier>{01c93960-d003-4548-adfb-1664c6536448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Command\ResourceCommand">
+      <UniqueIdentifier>{80f13f6d-b2c0-42a3-ac76-7ec343954a5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene">
+      <UniqueIdentifier>{33738162-b481-4e0a-b8f4-625b97077d0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{4c172902-0549-4543-be98-198a4b5f9a8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Command\OperateCommand">
+      <UniqueIdentifier>{e1906237-fe02-42fa-b6a9-7b8d6f99e2ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Resource\Shader">
+      <UniqueIdentifier>{e2ba5888-d8d8-46a9-b2fd-8d9df3371b24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Resource\Shader">
+      <UniqueIdentifier>{9f1fe1c4-789b-424d-b1e4-bfc97f5bd2ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Resource\Buffer">
+      <UniqueIdentifier>{bc7793f7-18d4-40a9-b1cd-4c2f11a19f0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Resource\Buffer">
+      <UniqueIdentifier>{f149de34-e50e-4d66-8435-2422b9d1ded2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Resource\RasterState">
+      <UniqueIdentifier>{c7d31ddb-f2ad-4965-a14a-0e5462294e5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Resource\Model">
+      <UniqueIdentifier>{36db3d68-dfbf-476f-a3fc-918c2efcd193}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Resource\Model">
+      <UniqueIdentifier>{a6dc2925-f019-4533-9b6c-49b0bbeca0b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Command">
+      <UniqueIdentifier>{f06dfc5f-4c01-4147-86ef-952ee76744d8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Factory.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.h">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="SwapChain.h">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>ヘッダー ファイル\Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="BackBuffer.h">
+      <Filter>ヘッダー ファイル\Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>ヘッダー ファイル\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicCommand.h">
+      <Filter>ヘッダー ファイル\Command\GraphicCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceCommand.h">
+      <Filter>ヘッダー ファイル\Command\ResourceCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureCommand.h">
+      <Filter>ヘッダー ファイル\Command\ResourceCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="OperateCommand.h">
+      <Filter>ヘッダー ファイル\Command\OperateCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveCommand.h">
+      <Filter>ヘッダー ファイル\Command\OperateCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>ヘッダー ファイル\Resource\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderCommand.h">
+      <Filter>ヘッダー ファイル\Command\ResourceCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelShader.h">
+      <Filter>ヘッダー ファイル\Resource\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>ヘッダー ファイル\Resource\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstBuffer.h">
+      <Filter>ヘッダー ファイル\Resource\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTexture.h">
+      <Filter>ヘッダー ファイル\Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferCommand.h">
+      <Filter>ヘッダー ファイル\Command\ResourceCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="MatrixCommand.h">
+      <Filter>ヘッダー ファイル\Command\OperateCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="RasterState.h">
+      <Filter>ヘッダー ファイル\Resource\RasterState</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>ヘッダー ファイル\Resource\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="LastShader.h">
+      <Filter>ヘッダー ファイル\Resource\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMain.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="FontTexture.h">
+      <Filter>ヘッダー ファイル\Resource\Texture</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SwapChain.cpp">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="BackBuffer.cpp">
+      <Filter>ソース ファイル\Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelShader.cpp">
+      <Filter>ソース ファイル\Resource\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstBuffer.cpp">
+      <Filter>ソース ファイル\Resource\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTexture.cpp">
+      <Filter>ソース ファイル\Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="LastShader.cpp">
+      <Filter>ソース ファイル\Resource\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>ソース ファイル\Resource\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="OperateCommand.cpp">
+      <Filter>ソース ファイル\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicCommand.cpp">
+      <Filter>ソース ファイル\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceCommand.cpp">
+      <Filter>ソース ファイル\Command</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
