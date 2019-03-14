@@ -7,7 +7,7 @@
 
 class GameMain {
 private:
-	CCommandManager m_gManager;
+	CGraphicCommandManager m_gManager;
 	CCommandManager m_oManager;
 	CCommandManager m_rManager;
 

@@ -12,7 +12,7 @@ struct PS_OUT {
 PS_OUT model_ps_main(PS_IN input) {
 	PS_OUT output = (PS_OUT)0;
 	
-	output.color = float4(1.0f, 1.0f, 1.0f, 1.0f);
+	output.color = float4(1.0f, 0.0f, 0.0f, 1.0f);
 	output.normal = input.nor;
 	
 	return output;

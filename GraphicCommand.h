@@ -16,9 +16,11 @@ using namespace DirectX;
 #include "RasterState.h"
 #include "Model.h"
 
+class CGraphicCommandManager;
+
 class CGraphicCommand : public CCommand, public CDeviceUser {
-protected:
-	static CCommandManager* m_manager;
+private:
+	static CGraphicCommandManager* m_manager;
 
 protected:
 	CGraphicCommand() {
@@ -28,7 +30,7 @@ protected:
 public:
 	virtual ~CGraphicCommand() {}
 
-	static void SetManager(CCommandManager* manager) {
+	static void SetManager(CGraphicCommandManager* manager) {
 		m_manager = manager;
 	}
 };
@@ -126,10 +128,6 @@ public:
 		CFactory<CViewPort>::Instance().Create(0, m_viewport);
 
 		m_model.Initialize();
-
-		if (m_manager) {
-			m_manager->RegistBack(this);
-		}
 	}
 };
 
@@ -189,12 +187,51 @@ public:
 		CFactory<CDepthStencilTexture>::Instance().Create(0, m_depthTexture);
 
 		CFactory<CLastComputeShader>::Instance().Create(0, m_last_cs);
-		
-		if (m_manager) {
-			m_manager->RegistBack(this);
-		}
 	}
 	~CLastPass() {}
+};
+
+class CGraphicCommandManager : public CCommandManager {
+private:
+	std::unique_ptr<CModelPass> m_modelPass;
+	std::unique_ptr<CLastPass> m_lastPass;
+
+public:
+	CGraphicCommandManager() {
+		m_lastPass = std::make_unique<CLastPass>();
+		m_modelPass = std::make_unique<CModelPass>();
+	}
+	~CGraphicCommandManager() {}
+
+	bool RunCommand() {
+		int res;
+		//順序によらないコマンドの実行
+		for (auto ite = m_commandList.begin(); ite != m_commandList.end();) {
+			res = (*ite)->Run();
+			if (res == -1)
+				return false;
+
+			if (res == 0) {
+				delete (*ite);
+				(*ite) = nullptr;
+				ite = m_commandList.erase(ite);
+				continue;
+			}
+
+			ite++;
+		}
+
+		//絶対必要なコマンドの順序実行
+		res = m_modelPass->Run();
+		if (res == -1)
+			return false;
+
+		res = m_lastPass->Run();
+		if (res == -1)
+			return false;
+
+		return true;
+	}
 };
 
 

@@ -73,9 +73,6 @@
     <Filter Include="ソース ファイル\Command">
       <UniqueIdentifier>{f06dfc5f-4c01-4147-86ef-952ee76744d8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル\Shader">
-      <UniqueIdentifier>{e26c1697-e21b-42c5-9fd0-509088524e5b}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Factory.h">
@@ -152,15 +149,6 @@
     </ClInclude>
     <ClInclude Include="FontTexture.h">
       <Filter>ヘッダー ファイル\Resource\Texture</Filter>
-    </ClInclude>
-    <ClInclude Include="shader\last_cs.h">
-      <Filter>リソース ファイル\Shader</Filter>
-    </ClInclude>
-    <ClInclude Include="shader\model_ps.h">
-      <Filter>リソース ファイル\Shader</Filter>
-    </ClInclude>
-    <ClInclude Include="shader\static_model_vs.h">
-      <Filter>リソース ファイル\Shader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
