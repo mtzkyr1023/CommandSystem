@@ -137,6 +137,9 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderCommand.h" />
+    <ClInclude Include="shader\last_cs.h" />
+    <ClInclude Include="shader\model_ps.h" />
+    <ClInclude Include="shader\static_model_vs.h" />
     <ClInclude Include="SwapChain.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureCommand.h" />
@@ -145,6 +148,7 @@
     <ClCompile Include="BackBuffer.cpp" />
     <ClCompile Include="ConstBuffer.cpp" />
     <ClCompile Include="Device.cpp" />
+    <ClCompile Include="FontTexture.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="GraphicCommand.cpp" />
     <ClCompile Include="LastShader.cpp" />
@@ -156,6 +160,9 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SwapChain.cpp" />
     <ClCompile Include="WinMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="tex\Cica_font.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

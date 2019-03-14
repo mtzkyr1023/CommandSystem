@@ -16,7 +16,7 @@ private:
 protected:
 	COperateCommand() {
 		if (m_manager) {
-			m_manager->Regist(this);
+			m_manager->RegistBack(this);
 		}
 	}
 

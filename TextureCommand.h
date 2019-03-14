@@ -7,6 +7,7 @@
 #include "RenderTexture.h"
 #include "SwapChain.h"
 #include "RasterState.h"
+#include "FontTexture.h"
 
 class CCreateBackBuffer : public CResourceCommand {
 private:
@@ -93,6 +94,28 @@ public:
 	CCreateModelPassTexture(int width, int height) : m_width(width), m_height(height) {}
 };
 
+
+class CCreateFontTexture : public CResourceCommand {
+private:
+	std::string m_filename;
+
+protected:
+	bool Internal() {
+		bool res;
+
+		std::shared_ptr<CFontTexture> font;
+		CFactory<CFontTexture>::Instance().Create(0, font);
+
+		res = font->Initialize(m_filename.c_str());
+		if (!res)
+			return false;
+
+		return true;
+	}
+
+public:
+	CCreateFontTexture(const char* filename) : m_filename(filename) {}
+};
 
 
 #endif

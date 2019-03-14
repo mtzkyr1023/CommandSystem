@@ -18,7 +18,7 @@ public:
 	virtual bool Initialize(int width, int height, int mipLevel, D3D11_SUBRESOURCE_DATA* initData = nullptr) { return false; }
 
 	//読み込みテクスチャ用初期化関数
-	virtual bool Initialize() { return false; }
+	virtual bool Initialize(const char* filename) { return false; }
 
 	ComPtr<ID3D11Texture2D> GetSourcePtr() { return m_texture; }
 

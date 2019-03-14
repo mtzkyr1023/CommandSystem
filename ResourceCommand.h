@@ -12,7 +12,7 @@ protected:
 	CResourceCommand() {
 		m_enableTime = 0;
 		if (m_manager) {
-			m_manager->Regist(this);
+			m_manager->RegistBack(this);
 		}
 	}
 

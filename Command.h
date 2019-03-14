@@ -59,7 +59,8 @@ public:
 	}
 
 	//コマンドの登録
-	void Regist(CCommand* command) { m_commandList.push_back(command); }
+	void RegistFront(CCommand* command) { m_commandList.push_front(command); }
+	void RegistBack(CCommand* command) { m_commandList.push_back(command); }
 
 	//コマンド実行
 	virtual bool RunCommand() {

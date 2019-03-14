@@ -33,6 +33,13 @@ public:
 		v[2].pos[1] = 1.0f;
 		v[2].pos[2] = 0.0f;
 
+		v[0].tex[0] = 0.0f;
+		v[0].tex[1] = 1.0f;
+		v[1].tex[0] = 1.0f;
+		v[1].tex[1] = 1.0f;
+		v[2].tex[0] = 0.5f;
+		v[2].tex[1] = 0.0f;
+
 		HRESULT res;
 		D3D11_BUFFER_DESC bufDesc;
 		D3D11_SUBRESOURCE_DATA initData;

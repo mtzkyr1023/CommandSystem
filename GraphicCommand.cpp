@@ -1,4 +1,4 @@
 #include "GraphicCommand.h"
 
 
-CGraphicCommandManager* CGraphicCommand::m_manager;
+CCommandManager* CGraphicCommand::m_manager;

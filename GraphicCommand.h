@@ -14,13 +14,12 @@ using namespace DirectX;
 #include "LastShader.h"
 #include "ConstBuffer.h"
 #include "RasterState.h"
+#include "FontTexture.h"
 #include "Model.h"
 
-class CGraphicCommandManager;
-
 class CGraphicCommand : public CCommand, public CDeviceUser {
-private:
-	static CGraphicCommandManager* m_manager;
+protected:
+	static CCommandManager* m_manager;
 
 protected:
 	CGraphicCommand() {
@@ -30,7 +29,7 @@ protected:
 public:
 	virtual ~CGraphicCommand() {}
 
-	static void SetManager(CGraphicCommandManager* manager) {
+	static void SetManager(CCommandManager* manager) {
 		m_manager = manager;
 	}
 };
@@ -52,6 +51,8 @@ private:
 
 	std::shared_ptr<CRasterState> m_rasterState;
 	std::shared_ptr<CViewPort> m_viewport;
+
+	std::shared_ptr<CFontTexture> m_tex;
 
 	Model m_model;
 
@@ -79,6 +80,12 @@ protected:
 		m_context->VSSetConstantBuffers(0, 1, m_viewBuffer->GetBuffer().GetAddressOf());
 		m_context->VSSetConstantBuffers(1, 1, m_projBuffer->GetBuffer().GetAddressOf());
 
+		ID3D11ShaderResourceView* srvArray[] = {
+			m_tex->GetSRV(),
+		};
+
+		
+
 		ID3D11RenderTargetView* rtvArray[] = {
 			m_colorTexture->GetRTV(),
 			m_normalTexture->GetRTV(),
@@ -92,6 +99,8 @@ protected:
 
 		m_context->OMSetRenderTargets(ARRAYSIZE(rtvArray), rtvArray, m_depthTexture->GetDSV());
 
+		m_context->PSSetShaderResources(0, ARRAYSIZE(srvArray), srvArray);
+
 		m_static_vs->Set();
 		m_model_ps->Set();
 
@@ -103,8 +112,12 @@ protected:
 		for (UINT i = 0; i < ARRAYSIZE(rtvArray); i++) {
 			rtvArray[i] = NULL;
 		}
+		for (UINT i = 0; i < ARRAYSIZE(srvArray); i++) {
+			srvArray[i] = NULL;
+		}
 
 		m_context->OMSetRenderTargets(ARRAYSIZE(rtvArray), rtvArray, NULL);
+		m_context->PSSetShaderResources(0, ARRAYSIZE(srvArray), srvArray);
 
 		return 1;
 	}
@@ -127,7 +140,13 @@ public:
 		CFactory<CRasterState>::Instance().Create(0, m_rasterState);
 		CFactory<CViewPort>::Instance().Create(0, m_viewport);
 
+		CFactory<CFontTexture>::Instance().Create(0, m_tex);
+
 		m_model.Initialize();
+
+		if (m_manager) {
+			m_manager->RegistBack(this);
+		}
 	}
 };
 
@@ -187,51 +206,12 @@ public:
 		CFactory<CDepthStencilTexture>::Instance().Create(0, m_depthTexture);
 
 		CFactory<CLastComputeShader>::Instance().Create(0, m_last_cs);
+
+		if (m_manager) {
+			m_manager->RegistBack(this);
+		}
 	}
 	~CLastPass() {}
-};
-
-class CGraphicCommandManager : public CCommandManager {
-private:
-	std::unique_ptr<CModelPass> m_modelPass;
-	std::unique_ptr<CLastPass> m_lastPass;
-
-public:
-	CGraphicCommandManager() {
-		m_lastPass = std::make_unique<CLastPass>();
-		m_modelPass = std::make_unique<CModelPass>();
-	}
-	~CGraphicCommandManager() {}
-
-	bool RunCommand() {
-		int res;
-		//順序によらないコマンドの実行
-		for (auto ite = m_commandList.begin(); ite != m_commandList.end();) {
-			res = (*ite)->Run();
-			if (res == -1)
-				return false;
-
-			if (res == 0) {
-				delete (*ite);
-				(*ite) = nullptr;
-				ite = m_commandList.erase(ite);
-				continue;
-			}
-
-			ite++;
-		}
-
-		//絶対必要なコマンドの順序実行
-		res = m_modelPass->Run();
-		if (res == -1)
-			return false;
-
-		res = m_lastPass->Run();
-		if (res == -1)
-			return false;
-
-		return true;
-	}
 };
 
 

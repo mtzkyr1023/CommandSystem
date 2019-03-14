@@ -73,6 +73,12 @@
     <Filter Include="ソース ファイル\Command">
       <UniqueIdentifier>{f06dfc5f-4c01-4147-86ef-952ee76744d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="リソース ファイル\shader">
+      <UniqueIdentifier>{d5ac247b-9e8c-446e-9c9b-311d5abe360c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\font">
+      <UniqueIdentifier>{5e01f199-919e-40b7-8613-8dd3ba350e30}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Factory.h">
@@ -150,6 +156,15 @@
     <ClInclude Include="FontTexture.h">
       <Filter>ヘッダー ファイル\Resource\Texture</Filter>
     </ClInclude>
+    <ClInclude Include="shader\last_cs.h">
+      <Filter>リソース ファイル\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="shader\model_ps.h">
+      <Filter>リソース ファイル\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="shader\static_model_vs.h">
+      <Filter>リソース ファイル\shader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SwapChain.cpp">
@@ -194,5 +209,13 @@
     <ClCompile Include="ResourceCommand.cpp">
       <Filter>ソース ファイル\Command</Filter>
     </ClCompile>
+    <ClCompile Include="FontTexture.cpp">
+      <Filter>ソース ファイル\Resource\Texture</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="tex\Cica_font.bmp">
+      <Filter>リソース ファイル\font</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -17,10 +17,13 @@ bool GameMain::Init(HWND hwnd, int width, int height) {
 	ptr = new CCreateMatrixBuffer();
 	ptr = new CCreateModelShader();
 	ptr = new CCreateModelPassTexture(width, height);
+	ptr = new CCreateFontTexture("tex/Cica_font.bmp");
 
 	COperateCommand* ope = new CViewMatrixUpdate();
 	ope = new CProjMatrixUpdate(XM_PIDIV2, 4.0f / 3.0f, 0.1f, 1000.0f);
 
+	CGraphicCommand* gra = new CModelPass();
+	gra = new CLastPass();
 
 	return true;
 }
