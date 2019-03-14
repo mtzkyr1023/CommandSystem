@@ -21,6 +21,13 @@ bool GameMain::Init(HWND hwnd, int width, int height) {
 	COperateCommand* ope = new CViewMatrixUpdate();
 	ope = new CProjMatrixUpdate(XM_PIDIV2, 4.0f / 3.0f, 0.1f, 1000.0f);
 
+	CGraphicCommand* gra = new CModelPass();
+	if (!gra->Initialize())
+		return false;
+	gra = new CLastPass;
+	if (!gra->Initialize())
+		return false;
+
 
 	return true;
 }
