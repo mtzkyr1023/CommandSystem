@@ -79,6 +79,9 @@
     <Filter Include="リソース ファイル\font">
       <UniqueIdentifier>{5e01f199-919e-40b7-8613-8dd3ba350e30}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Tool">
+      <UniqueIdentifier>{b6c25bcf-d7a6-4a99-9b09-bc2e1616992b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Factory.h">
@@ -164,6 +167,9 @@
     </ClInclude>
     <ClInclude Include="shader\static_model_vs.h">
       <Filter>リソース ファイル\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_lib\stb_image.h">
+      <Filter>ヘッダー ファイル\Tool</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

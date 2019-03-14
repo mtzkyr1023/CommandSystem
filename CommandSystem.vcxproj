@@ -140,6 +140,7 @@
     <ClInclude Include="shader\last_cs.h" />
     <ClInclude Include="shader\model_ps.h" />
     <ClInclude Include="shader\static_model_vs.h" />
+    <ClInclude Include="stb_lib\stb_image.h" />
     <ClInclude Include="SwapChain.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureCommand.h" />
