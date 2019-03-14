@@ -20,7 +20,7 @@ bool GameMain::Init(HWND hwnd, int width, int height) {
 	ptr = new CCreateFontTexture("tex/Cica_font.bmp");
 
 	COperateCommand* ope = new CViewMatrixUpdate();
-	ope = new CProjMatrixUpdate(XM_PIDIV2, 4.0f / 3.0f, 0.1f, 1000.0f);
+	ope = new CProjMatrixUpdate(XM_PIDIV2, 4.0f / 3.0f, 10.1f, 1000.0f);
 
 	CGraphicCommand* gra = new CModelPass();
 	gra = new CLastPass();
